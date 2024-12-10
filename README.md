@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next-Template
 
-## Getting Started
+- **Next.js 15 (App Router)** 프로젝트 템플릿
+- ESLint 적용 (`@rushstack/eslint-config`)
+- Prettier 적용
+- Tailwind CSS 적용
 
-First, run the development server:
+## 환경
+
+- node : v20.16.0
+- npm : 10.8.1
+- yarn : 1.22.22
+
+## 시작하기
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. git hook commit-msg 설정
+$ cp git_pre/commit-msg ./.git/hooks
+
+# 2. 의존성 패키지 일괄 설치
+$ yarn install
+# or npm install
+
+# 3. 스크립트 실행
+$ yarn dev
+# or npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 폴더 구조
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+  src
+   ├── app          // 폴더 기반 라우팅
+   ├── components   // 컴포넌트 관리
+   ├── lib          // 외부 라이브러리 설정
+   ├── stores       // 전역 상태 관리
+   ├── styles       // 전역 스타일 및 모듈화 스타일 파일 관리
+   │    └── fonts
+   ├── types        // 전역 타입 관리
+   └── utils        // 공통으로 사용되는 유틸리티 함수 관리
+```
